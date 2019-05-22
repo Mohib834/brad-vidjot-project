@@ -7,7 +7,7 @@
 <% } %>
 
 <div class="container">
-    <% if(ideas){ %>
+    <% if(ideas.length){ %>
         <% ideas.forEach(idea => { %>
             <div class="card card-body mb-3">
                 <h4><%= idea.title %></h4>
@@ -20,7 +20,9 @@
             </div>
         <% }) %>
     <% } else { %>
-        <p>No video ideas listed</p>
+        <div class="container">
+            <p>No video ideas listed. <a href="/ideas/new">Add Video ?</a></p>
+        </div>
     <% } %>
 </div>
 
