@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<% if(message.length > 0) { %>
+    <div class="container">
+        <div class="alert alert-danger"><%= message %></div>
+    </div>
+<% } %>
+
+<div class="container">     
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Welcome</h1>
+        <p class="lead">Jot down ideas for your next Youtube videos</p>
+        <a href="/ideas/new" class="btn btn-dark btn-lg">Add Video Idea</a>
+    </div>
+</div>
+
+<% include partials/footer %>

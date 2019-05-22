@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<% if(message.length > 0) { %>
+    <div class="container">
+        <div class="alert alert-danger"><%= message %></div>
+    </div>
+<% } %>
+
+    <div class="mx-auto" style="width:30%">
+        <div class="card card-body">
+            <h3 class="text-center">Account Login</h3>
+            <form method="POST" action="/users/login">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+            <p class="text-muted mt-2">Do not have an account ?
+                <a href="/users/register">Register</a>
+            </p>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

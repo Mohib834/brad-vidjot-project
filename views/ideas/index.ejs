@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<% if(message.length > 0) { %>
+    <div class="container">
+        <div class="alert alert-success"><%= message %></div>
+    </div>
+<% } %>
+
+<div class="container">
+    <% if(ideas){ %>
+        <% ideas.forEach(idea => { %>
+            <div class="card card-body mb-3">
+                <h4><%= idea.title %></h4>
+                <p><%= idea.detail %></p>
+                <a href="/ideas/<%= idea.id %>/edit" class="btn btn-dark mb-1">Edit</a>
+                <form method="post" action="/ideas/<%= idea.id %>?_method=DELETE">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button href="/ideas/<%= idea.id %>/delete" class="btn btn-danger btn-block">Delete</button>
+                </form>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>No video ideas listed</p>
+    <% } %>
+</div>
+
+<% include ../partials/footer %>
