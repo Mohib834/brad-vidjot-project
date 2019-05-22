@@ -10,6 +10,7 @@ const ideasRouter = require('./routes/ideas');
 const usersRouter = require('./routes/users');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const router = express.Router();
 
 
 require('./db/mongoose');
@@ -52,12 +53,12 @@ app.use('/users', usersRouter);
 //passport config
 require('./config/passport')(passport);
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     req.flash('logout');
     res.render('Index', { message:req.flash('logout') });
 })
 
-app.get('/about',(req, res) => {
+router.get('/about',(req, res) => {
     res.render('About');
 })
 
