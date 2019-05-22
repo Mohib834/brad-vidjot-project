@@ -53,13 +53,13 @@ app.use('/users', usersRouter);
 //passport config
 require('./config/passport')(passport);
 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     req.flash('logout');
-    res.render('Index', { message:req.flash('logout') });
+    res.render('index', { message:req.flash('logout') });
 })
 
-router.get('/about',(req, res) => {
-    res.render('About');
+app.get('/about',(req, res) => {
+    res.render('about');
 })
 
 
