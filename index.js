@@ -10,7 +10,6 @@ const ideasRouter = require('./routes/ideas');
 const usersRouter = require('./routes/users');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const router = express.Router();
 
 
 require('./db/mongoose');
